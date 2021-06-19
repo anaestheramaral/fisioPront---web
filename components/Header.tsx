@@ -32,7 +32,7 @@ const Header: React.FC = () => {
 
               <nav className={styles.nav}>
                 <Link href="/home">Home</Link>
-                <Link href="">Pacientes</Link>
+                <Link href="patients">Pacientes</Link>
                 <Link href="">Escalas e índices</Link>
                 <Link href="">Contribua conosco</Link>
               </nav>
