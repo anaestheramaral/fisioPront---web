@@ -1,6 +1,13 @@
 import Head from 'next/head'
+import { Login } from '../components/Login'
+import { useSession } from 'next-auth/client'
+import { useRouter } from 'next/dist/client/router'
 
 export default function Home() {
+  const [ session ] = useSession()
+  const router = useRouter()
+
+  console.log(session)
   return (
     <div>
       <Head>
@@ -10,11 +17,7 @@ export default function Home() {
       </Head>
 
       <main>
-        <h1>
-          Página de Cadastro... (Thiago)
-        </h1>
-
-        (...)
+        { !session ? <Login /> : router.push('/home')}
       </main>
 
       
