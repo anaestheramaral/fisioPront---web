@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/header.module.scss'
-import { FiMenu as FiMenuIcon} from 'react-icons/fi'
+import Link from 'next/link'
+import { FiMenu as MenuIcon, FiX as CloseIcon} from 'react-icons/fi'
 import Input from './Input';
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleOpenMenu = () => {
+    setIsMenuOpen(true);
+  };
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
       <header className={styles.header}>
         <div className={styles.headerTop}>
@@ -11,9 +21,27 @@ const Header: React.FC = () => {
               <br />
               Fulano!
           </h1>
-          <FiMenuIcon />
+          <MenuIcon onClick={handleOpenMenu} />
         </div>
         <Input />
+          <div className={isMenuOpen? styles.sideMenuOpen : styles.sideMenuClosed}>
+          {isMenuOpen && (
+            <>
+              <CloseIcon onClick={handleCloseMenu}/>
+
+              <nav className={styles.nav}>
+                <Link href="/home">Home</Link>
+                <Link href="">Pacientes</Link>
+                <Link href="">Escalas e índices</Link>
+                <Link href="">Contribua conosco</Link>
+              </nav>
+
+              <strong>fisioPront</strong>
+            </>
+          )}
+
+        </div>
+        
       </header>
   );
 }

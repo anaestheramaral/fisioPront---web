@@ -9,11 +9,11 @@ export default function Home() {
       </Head>
 
       <Header />
-      
+
       <main>
         
 
-        (...)
+        
       </main>
 
         
