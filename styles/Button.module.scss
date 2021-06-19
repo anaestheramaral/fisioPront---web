@@ -1,0 +1,30 @@
+.button{
+  background-color: var(--blue-light);
+  color: var(--white);
+
+  width: 100%;
+  border-radius: 15px;
+
+  transition: background-color 0.2s;
+
+  text-transform: uppercase;
+  border: none;
+
+  height: 3rem;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 20px;
+  &:hover {
+    background-color: var(--blue-dark);
+  }
+
+  &+button{
+    margin-top: 20px;
+  }
+
+  
+}
+
+

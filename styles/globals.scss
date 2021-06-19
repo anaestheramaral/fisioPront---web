@@ -28,3 +28,11 @@ a {
 h1, h2, h3 {
   font-weight: 500;
 }
+
+input {
+  color: var(--white);
+  &:focus{
+    outline: none;
+  }
+}
+// form:focus
