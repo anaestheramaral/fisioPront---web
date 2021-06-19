@@ -2,20 +2,20 @@ import React, { useEffect, useRef } from 'react';
 import styles from '../styles/Input.module.scss'
 
 // import { Container } from './styles';
-interface InputProps {
+interface TextAreaProps {
   handleSearch?: () => any;
-  placeholder: string;
+  placeholder?: string;
   startIcon?: React.ReactNode;
 }
-const Input: React.FC<InputProps> = ({handleSearch, placeholder, startIcon}) => {
 
+const Textarea: React.FC<TextAreaProps> = ({handleSearch, placeholder, startIcon}) => {
  
   return (
     <form onSubmit={handleSearch} className={styles.form} tabIndex={-1}>
       {startIcon}
-      <input placeholder={placeholder}/>
+      <textarea placeholder={placeholder} rows={10}/>
     </form>
   );
 }
 
-export default Input;
+export default Textarea;

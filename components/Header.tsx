@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import styles from '../styles/header.module.scss'
 import Link from 'next/link'
-import { FiMenu as MenuIcon, FiX as CloseIcon} from 'react-icons/fi'
+import { FiMenu as MenuIcon, FiX as CloseIcon, FiSearch as FiSearchIcon} from 'react-icons/fi'
+
 import Input from './Input';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ const Header: React.FC = () => {
           </h1>
           <MenuIcon onClick={handleOpenMenu} />
         </div>
-        <Input />
+        <Input placeholder="procurar" startIcon={<FiSearchIcon />}/>
           <div className={isMenuOpen? styles.sideMenuOpen : styles.sideMenuClosed}>
           {isMenuOpen && (
             <>
