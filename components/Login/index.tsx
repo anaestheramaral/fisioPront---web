@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import styles from '../../styles/Login/Styles.module.scss'
 import { FaGoogle } from 'react-icons/fa'
 
@@ -7,6 +8,10 @@ import { signIn } from 'next-auth/client'
 
 export function Login() {
     return (
+        <>
+        <Head>
+            <title>FisioPront | Login</title>
+        </Head>
         <div className={ styles.container }>
             <header>
                 <div>
@@ -23,5 +28,6 @@ export function Login() {
                 </div>
             </main>
         </div>
+        </>
     )
 }
