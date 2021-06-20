@@ -13,9 +13,14 @@ const Input: React.FC<InputProps> = ({onChange, placeholder, startIcon, name, la
 
  
   return (
-    <div style={{display: 'inline-block'}}>
-      <label htmlFor={name}>{label}</label>
-      <input placeholder={placeholder} onChange={onChange} name={name} className={styles.form} />
+    <div style={{ width: '100%'}}>
+      <label htmlFor={name} className={styles.label}>{label}</label>
+      <input 
+        placeholder={placeholder} 
+        onChange={onChange} 
+        name={name} 
+        className={styles.form}
+      />
     </div>
   );
 }

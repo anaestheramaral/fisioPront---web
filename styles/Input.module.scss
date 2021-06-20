@@ -3,18 +3,19 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--white);
+  background-color: var(--blue-100);
   border: 1px solid var(--blue-200);
   border-radius: 8px;
+  width: 100%;
   padding: 16px 20px;
   
   &::placeholder {
     color: var(--gray-dark);
   }
-  
-  & svg {
-    margin-right: 1rem;
-  }
 
+}
 
+.label {
+    display: inline-block;
+    margin-bottom: 8px;
 }
