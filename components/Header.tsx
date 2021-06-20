@@ -31,8 +31,8 @@ const Header: React.FC = () => {
               <CloseIcon onClick={handleCloseMenu}/>
 
               <nav className={styles.nav}>
-                <Link href="/home">Home</Link>
-                <Link href="patients">Pacientes</Link>
+                <Link href="/">Home</Link>
+                <Link href="/patients">Pacientes</Link>
                 <Link href="/scales">Escalas e índices</Link>
                 <Link href="">Contribua conosco</Link>
               </nav>

@@ -11,7 +11,7 @@ import { FaChevronLeft as BackIcon } from 'react-icons/fa';
 export default function Home() {
   return (
       <main className={styles.container}>
-        <Link href="/home" passHref >
+        <Link href="/" passHref >
           <BackIcon className={styles.back} />
         </Link>
 

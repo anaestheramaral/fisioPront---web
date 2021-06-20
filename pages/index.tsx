@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       
       <Header />
-      <main>
+      <main className={styles.main}>
       <h2>Escalas e índices</h2>
         <Button>
           ESCALA VISUAL ANALÓGICA – EVA

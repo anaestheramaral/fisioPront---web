@@ -4,7 +4,9 @@ import { FaGoogle } from 'react-icons/fa'
 
 import { signIn } from 'next-auth/client'
 
-
+async function handleLogin(){
+    await signIn('google')
+}
 
 export function Login() {
     return (
@@ -24,7 +26,7 @@ export function Login() {
                     <input type="text" placeholder="Email ou telefone" />
                     <input type="password" placeholder="Senha"/>
                     <span>ou</span>
-                    <button onClick={ () => signIn('google') }><FaGoogle />Entrar com Google</button>
+                    <button onClick={ () => handleLogin() }><FaGoogle />Entrar com Google</button>
                 </div>
             </main>
         </div>
