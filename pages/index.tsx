@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Login } from "../components/Login";
 import { HeaderMenu, Userinfo } from "../components";
@@ -63,7 +64,7 @@ export default function Home() {
               <ul>
                 {pacients.map((pacient) => {
                   return (
-                    <li>
+                    <li key={pacient.name}>
                       <div className={styles.avatar_user}>
                         <img src="/images/pacients.png" alt="" />
                         <div className={styles.avatar_title}>
@@ -73,7 +74,7 @@ export default function Home() {
                       <div>
                         <p>{pacient.date}</p>
                       </div>
-                      <div className={`${styles.user_status} ${styles}.${pacient.styles}`}>
+                      <div className={`${styles.user_status} ${styles[pacient.styles]}`}>
                         <p>{pacient.status}</p>
                       </div>
                     </li>

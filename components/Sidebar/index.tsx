@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { useSession } from "next-auth/client";
+import Link from "next/link";
 import React from "react";
 
 import styles from "./Sidebar.module.scss";
@@ -15,7 +16,11 @@ const Sidebar: React.FC = () => {
       </div>
       <div className={styles.menu}>
         <ul>
-          <li className={styles.active}>Home</li>
+          <Link href="/" passHref>
+            <li className={styles.active}>
+                Home
+            </li>
+          </Link>
           <li>Pacientes</li>
           <li>Escalas e Indices</li>
           <li>Contribua Conosco</li>

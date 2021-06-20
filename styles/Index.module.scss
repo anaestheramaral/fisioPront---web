@@ -87,28 +87,29 @@
 .user_status {
   color: #487BAA !important;
   padding: 10px 20px;
-  border-radius: 8px;
+  border-radius: 8px; 
 }
 
 .default {
   background-color: #D6EBFF;
 }
 
-.user_status_success {
+
+.success {
   color: #487BAA !important;
   background-color: #DBF6E3;
   padding: 10px 20px;
   border-radius: 8px;
 }
 
-.user_status_warning {
+.warning {
   color: #487BAA !important;
   background-color: #F6DBE3;
   padding: 10px 20px;
   border-radius: 8px;
 }
 
-.user_status_regular {
+.regular {
   color: #487BAA !important;
   background-color: #D6EBFF;
   padding: 10px 20px;
