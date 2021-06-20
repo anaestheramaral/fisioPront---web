@@ -1,24 +1,27 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
+import { Login } from '../components/Login'
+import { useSession, signOut } from 'next-auth/client'
+
+import Link from 'next/link';
 import Button from '../components/Button';
 import { FiX as CloseIcon} from 'react-icons/fi'
 import LoadMoreButton from '../components/LoadMoreButton';
 import React from 'react';
 
 export default function Home() {
-  return (
+  const [session] = useSession()
+
+  return !session ? <Login /> : (
     <div>
       <Head>
         <title>fisioPront | Home</title>
       </Head>
-
+      
       <Header />
-
-      <main className={styles.main}>
-        
-        <h2>Escalas e índices</h2>
+      <main>
+      <h2>Escalas e índices</h2>
         <Button>
           ESCALA VISUAL ANALÓGICA – EVA
         </Button>
@@ -37,10 +40,7 @@ export default function Home() {
         <Link href="/newPatient" passHref>
           <LoadMoreButton />
         </Link>
-        
       </main>
-
-        
     </div>
   )
 }
