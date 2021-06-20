@@ -8,24 +8,28 @@ import styles from "../styles/Index.module.scss";
 const pacients = [
   {
     name: "Emerson Garrido",
+    contact: '67 99350-8091',
     date: "10/05/2020",
     status: "Bom",
     styles: 'default',
   },
   {
     name: "Emerson Garrido",
+    contact: '67 99350-8091',
     date: "10/05/2020",
     status: "Regular",
     styles: 'regular',
   },
   {
     name: "Emerson Garrido",
+    contact: '67 99350-8091',
     date: "10/05/2020",
     status: "Crítico",
     styles: 'warning',
   },
   {
     name: "Emerson Garrido",
+    contact: '67 99350-8091',
     date: "10/05/2020",
     status: "Ótimo",
     styles: 'success',
@@ -68,7 +72,8 @@ export default function Home() {
                       <div className={styles.avatar_user}>
                         <img src="/images/pacients.png" alt="" />
                         <div className={styles.avatar_title}>
-                          <p>{pacient.name}</p>
+                          <div><p>{pacient.name}</p></div>
+                          <div className={styles.user_contact}><p>{pacient.contact}</p></div>
                         </div>
                       </div>
                       <div>
