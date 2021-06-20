@@ -6,27 +6,26 @@ interface PatientProps {
   internationMotive: string;
   observations: string;
 };
-
 interface PatientsProps {
   patients: PatientProps[],
-  handleAddNewPatient: (newPatient: PatientProps) => void;
+  handleAddNewPatient: (newPatient: PatientProps) => any;
 };
 
+export const PatientsContext = createContext<PatientsProps>({} as PatientsProps);
 
-type PatientsProviderProps = { children: React.ReactNode };
+export const PatientsProvider = (props: any) => {
+  const [patients, setPatients] = usePersistedState<PatientProps[]>('@fisioPront:patients', []);
 
-export const PacientsContext = createContext<PatientsProps>({} as PatientsProps);
-
-export const PatientsContextProvider = ({ children}: PatientsProviderProps) => {
-  const [patients, setPatients] = usePersistedState('@fisioPront:patients', [] as PatientProps[]);
 
   const handleAddNewPatient = (newPatient: PatientProps) => {
     setPatients([...patients, newPatient])
   };
 
+  const children = props.children;
+
   return (
-    <PacientsContext.Provider value={{patients, handleAddNewPatient}}>
+    <PatientsContext.Provider value={{patients, handleAddNewPatient}}>
       {children}
-    </PacientsContext.Provider>
+    </PatientsContext.Provider>
   )
 }

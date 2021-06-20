@@ -3,8 +3,6 @@ import Link from 'next/link';
 import styles from '../styles/Home.module.scss';
 import Header from '../components/Header';
 import Button from '../components/Button';
-import { FiX as CloseIcon} from 'react-icons/fi'
-import LoadMoreButton from '../components/LoadMoreButton';
 import React from 'react';
 
 export default function Home() {

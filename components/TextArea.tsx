@@ -1,20 +1,22 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ChangeEvent, useEffect, useRef } from 'react';
 import styles from '../styles/Input.module.scss'
 
 // import { Container } from './styles';
 interface TextAreaProps {
-  handleSearch?: () => any;
+  onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => any;
+
   placeholder?: string;
   startIcon?: React.ReactNode;
+  value?: any;
 }
 
-const Textarea: React.FC<TextAreaProps> = ({handleSearch, placeholder, startIcon}) => {
+const Textarea: React.FC<TextAreaProps> = ({onChange, placeholder, startIcon, value}) => {
  
   return (
-    <form onSubmit={handleSearch} className={styles.form} tabIndex={-1}>
+    <div  className={styles.form} tabIndex={-1}>
       {startIcon}
-      <textarea placeholder={placeholder} rows={10}/>
-    </form>
+      <textarea placeholder={placeholder} rows={10} onChange={onChange} value={value}/>
+    </div>
   );
 }
 

@@ -1,20 +1,21 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ChangeEvent, useEffect, useRef } from 'react';
 import styles from '../styles/Input.module.scss'
 
 // import { Container } from './styles';
 interface InputProps {
-  handleSearch?: () => any;
+  onChange?: (e: ChangeEvent<HTMLInputElement>) => any;
   placeholder: string;
   startIcon?: React.ReactNode;
+  value: any;
 }
-const Input: React.FC<InputProps> = ({handleSearch, placeholder, startIcon}) => {
+const Input: React.FC<InputProps> = ({onChange, placeholder, startIcon, value}) => {
 
  
   return (
-    <form onSubmit={handleSearch} className={styles.form} tabIndex={-1}>
+    <div className={styles.form} tabIndex={-1}>
       {startIcon}
-      <input placeholder={placeholder}/>
-    </form>
+      <input placeholder={placeholder} onChange={onChange} value={value}/>
+    </div>
   );
 }
 
