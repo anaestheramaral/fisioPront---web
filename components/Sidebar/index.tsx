@@ -21,9 +21,21 @@ const Sidebar: React.FC = () => {
                 Home
             </li>
           </Link>
-          <li>Pacientes</li>
-          <li>Escalas e Indices</li>
-          <li>Contribua Conosco</li>
+          <Link href="/patients" passHref>
+            <li className={styles.active}>
+               Pacientes
+            </li>
+          </Link>
+          <Link href="/scales" passHref>
+            <li className={styles.active}>
+               Escalas e Indices
+            </li>
+          </Link>
+          <Link href="/" passHref>
+            <li className={styles.active}>
+             Contribua Conosco
+            </li>
+          </Link>
         </ul>
       </div>
     </div>

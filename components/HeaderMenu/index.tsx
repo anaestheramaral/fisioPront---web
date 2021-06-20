@@ -17,7 +17,9 @@ const HeaderMenu: React.FC<HeaderMenuProps> = ({title}) => {
           <Button>+ Novo Paciente</Button>
         </Link>
         
-        <button onClick={() => signOut()} className={styles.logout}> <FiLogOut />Sair</button>
+        <button onClick={() => signOut()} className={styles.logout}>
+           <FiLogOut />Sair
+        </button>
       </div>
     </div>
   );
