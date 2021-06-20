@@ -82,4 +82,17 @@
     color: var(--gray)
   }
 
+  button {
+    border: 1px solid var(--blue-dark);
+    border-radius: 8px;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 16px;
+
+    margin-top: 30px;
+  }
+
+  
+
 }

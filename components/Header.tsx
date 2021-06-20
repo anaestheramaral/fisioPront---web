@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { FiMenu as MenuIcon, FiX as CloseIcon, FiSearch as FiSearchIcon} from 'react-icons/fi'
 
 import Input from './Input';
+import { signOut } from 'next-auth/client';
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -35,6 +36,7 @@ const Header: React.FC = () => {
                 <Link href="/patients">Pacientes</Link>
                 <Link href="/scales">Escalas e índices</Link>
                 <Link href="">Contribua conosco</Link>
+                <button onClick={() => signOut()}>Sign out</button>
               </nav>
 
               <strong>fisioPront</strong>
