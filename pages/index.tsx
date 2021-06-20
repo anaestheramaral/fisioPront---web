@@ -1,46 +1,25 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.scss';
-import Header from '../components/Header';
-import { Login } from '../components/Login'
-import { useSession, signOut } from 'next-auth/client'
+import { Login } from "../components/Login";
+import { Sidebar, HeaderMenu, Userinfo } from "../components";
+import { useSession, signOut } from "next-auth/client";
+import styles from "../styles/Index.module.scss";
 
-import Link from 'next/link';
-import Button from '../components/Button';
-import { FiX as CloseIcon} from 'react-icons/fi'
-import LoadMoreButton from '../components/LoadMoreButton';
-import React from 'react';
+import React from "react";
 
 export default function Home() {
-  const [session] = useSession()
+  const [session] = useSession();
 
-  return !session ? <Login /> : (
-    <div>
-      <Head>
-        <title>fisioPront | Home</title>
-      </Head>
-      
-      <Header />
-      <main className={styles.main}>
-      <h2>Escalas e índices</h2>
-        <Button>
-          ESCALA VISUAL ANALÓGICA – EVA
-        </Button>
-
-        <Button>
-          ESCALA DE FREQUÊNCIA DE ESPASMO
-        </Button>
-
-        <h2 style={{marginTop: 50}}>Pacientes</h2>
-
-        <Button spaced>
-          <strong>A.R.U</strong>
-          <CloseIcon />
-        </Button>
-
-        <Link href="/newPatient" passHref>
-          <LoadMoreButton />
-        </Link>
-      </main>
+  return !session ? (
+    <Login />
+  ) : (
+    <div className={styles.main}>
+      <Sidebar />
+      <div className={styles.content}>
+        <HeaderMenu />
+        <div>
+          <div><p>conteudo</p></div>
+          <Userinfo />
+        </div>
+      </div>
     </div>
-  )
+  );
 }
