@@ -1,9 +1,35 @@
+import React from "react";
 import { Login } from "../components/Login";
 import { HeaderMenu, Userinfo } from "../components";
 import { useSession, signOut } from "next-auth/client";
 import styles from "../styles/Index.module.scss";
 
-import React from "react";
+const pacients = [
+  {
+    name: "Emerson Garrido",
+    date: "10/05/2020",
+    status: "Bom",
+    styles: 'default',
+  },
+  {
+    name: "Emerson Garrido",
+    date: "10/05/2020",
+    status: "Regular",
+    styles: 'regular',
+  },
+  {
+    name: "Emerson Garrido",
+    date: "10/05/2020",
+    status: "Crítico",
+    styles: 'warning',
+  },
+  {
+    name: "Emerson Garrido",
+    date: "10/05/2020",
+    status: "Ótimo",
+    styles: 'success',
+  },
+];
 
 export default function Home() {
   const [session] = useSession();
@@ -13,9 +39,49 @@ export default function Home() {
   ) : (
     <div className={styles.main}>
       <div className={styles.content}>
-        <HeaderMenu title="Dashboard"/>
-        <div>
-          <div><p>conteudo</p></div>
+        <HeaderMenu title="Dashboard" />
+        <div className={styles.box}>
+          <div className={styles.user_list}>
+            <div className={styles.header_actions}>
+              <div className={styles.title}>
+                <p>Pacientes Recentes</p>
+              </div>
+              <div className={styles.action}>
+                <p>Ver Todos</p>
+              </div>
+            </div>
+
+            <div className={styles.header_list}>
+              <ul>
+                <li>Paciente</li>
+                <li>Data de Entrada</li>
+                <li>Status</li>
+              </ul>
+            </div>
+
+            <div className={styles.list_users}>
+              <ul>
+                {pacients.map((pacient) => {
+                  return (
+                    <li>
+                      <div className={styles.avatar_user}>
+                        <img src="/images/pacients.png" alt="" />
+                        <div className={styles.avatar_title}>
+                          <p>{pacient.name}</p>
+                        </div>
+                      </div>
+                      <div>
+                        <p>{pacient.date}</p>
+                      </div>
+                      <div className={`${styles.user_status} ${styles}.${pacient.styles}`}>
+                        <p>{pacient.status}</p>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+          </div>
           <Userinfo />
         </div>
       </div>
