@@ -1,0 +1,56 @@
+.container {
+  width: 400px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #EBEFF2;
+}
+
+.avatar_user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title{
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cards{
+
+}
+
+.card{
+  background-color: #F3F7FF;
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding: 5px;
+  width: 100%;
+  border: 2px solid #EEF1FB;
+  border-radius: 6px;
+}
+
+.icon {
+  padding: 10px;
+}
+
+.infos{
+  margin-left: 15px;
+}
+
+.info {
+  color: #8089AB;
+  font-size: 14px;
+}
+
+.number {
+  margin-top: 5px;
+  color: #20232B;
+  font-weight: bold;
+  font-size: 20px;
+}
