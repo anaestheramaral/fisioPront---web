@@ -8,31 +8,45 @@ import styles from "../styles/Index.module.scss";
 const pacients = [
   {
     name: "Emerson Garrido",
-    contact: '67 99350-8091',
+    contact: "67 99350-8091",
     date: "10/05/2020",
     status: "Bom",
-    styles: 'default',
+    styles: "default",
   },
   {
     name: "Emerson Garrido",
-    contact: '67 99350-8091',
+    contact: "67 99350-8091",
     date: "10/05/2020",
     status: "Regular",
-    styles: 'regular',
+    styles: "regular",
   },
   {
     name: "Emerson Garrido",
-    contact: '67 99350-8091',
+    contact: "67 99350-8091",
     date: "10/05/2020",
     status: "Crítico",
-    styles: 'warning',
+    styles: "warning",
   },
   {
     name: "Emerson Garrido",
-    contact: '67 99350-8091',
+    contact: "67 99350-8091",
     date: "10/05/2020",
     status: "Ótimo",
-    styles: 'success',
+    styles: "success",
+  },
+  {
+    name: "Emerson Garrido",
+    contact: "67 99350-8091",
+    date: "10/05/2020",
+    status: "Regular",
+    styles: "regular",
+  },
+  {
+    name: "Emerson Garrido",
+    contact: "67 99350-8091",
+    date: "10/05/2020",
+    status: "Crítico",
+    styles: "warning",
   },
 ];
 
@@ -72,14 +86,22 @@ export default function Home() {
                       <div className={styles.avatar_user}>
                         <img src="/images/pacients.png" alt="" />
                         <div className={styles.avatar_title}>
-                          <div><p>{pacient.name}</p></div>
-                          <div className={styles.user_contact}><p>{pacient.contact}</p></div>
+                          <div>
+                            <p>{pacient.name}</p>
+                          </div>
+                          <div className={styles.user_contact}>
+                            <p>{pacient.contact}</p>
+                          </div>
                         </div>
                       </div>
-                      <div>
+                      <div className={styles.user_date}>
                         <p>{pacient.date}</p>
                       </div>
-                      <div className={`${styles.user_status} ${styles[pacient.styles]}`}>
+                      <div
+                        className={`${styles.user_status} ${
+                          styles[pacient.styles]
+                        }`}
+                      >
                         <p>{pacient.status}</p>
                       </div>
                     </li>
