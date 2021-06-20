@@ -1,5 +1,4 @@
-import React, { createContext } from 'react';
-import usePersistedState from '../assets/usePersistedState';
+import React, { createContext, useState } from 'react';
 
 interface PatientProps {
   name: string;
@@ -14,7 +13,7 @@ interface PatientsProps {
 export const PatientsContext = createContext<PatientsProps>({} as PatientsProps);
 
 export const PatientsProvider = (props: any) => {
-  const [patients, setPatients] = usePersistedState<PatientProps[]>('@fisioPront:patients', []);
+  const [patients, setPatients] = useState<PatientProps[]>([]);
 
 
   const handleAddNewPatient = (newPatient: PatientProps) => {
