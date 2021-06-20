@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Input from '../components/Input';
 import Textarea from '../components/TextArea';
 import { FaChevronLeft as BackIcon } from 'react-icons/fa';
+import { HeaderMenu } from '../components';
 
 interface PatientProps {
   name: string;
@@ -31,21 +32,19 @@ export default function Home() {
   }
 
   return (
-      <main className={styles.container}>
-        <Link href="/" passHref >
-          <BackIcon className={styles.back} />
-        </Link>
+      <main className={styles.main}>
+        
 
-        <h2>Adicionar paciente</h2>
+        <HeaderMenu title="Adicionar novo paciente" />
 
         <form onSubmit={handleSubmit}>
-          <Input onChange={handleChange} placeholder="Nome" value={newPatient.name}/>
-          <Input onChange={handleChange} placeholder="Motivo da internação" value={newPatient.internationMotive}/>
+          <Input onChange={handleChange} placeholder="Nome" name="name" label="Nome:"/>
+          <Input onChange={handleChange} placeholder="Motivo da internação" name="name" label="Motivo da internação:"/>
 
 
           <h3 className={styles.observations}>Observações:</h3>
 
-          <Textarea onChange={handleChange} value={newPatient.observations}/>
+          <Textarea onChange={handleChange} name="observations" rows={6}/>
 
         <Button type="submit"><strong>Salvar</strong></Button>
        </form>

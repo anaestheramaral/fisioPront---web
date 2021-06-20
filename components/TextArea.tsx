@@ -1,23 +1,22 @@
-import React, { ChangeEvent, useEffect, useRef } from 'react';
+import React, { ChangeEvent } from 'react';
 import styles from '../styles/Input.module.scss'
 
 // import { Container } from './styles';
-interface TextAreaProps {
+interface InputProps {
   onChange?: (e: ChangeEvent<HTMLTextAreaElement>) => any;
-
-  placeholder?: string;
-  startIcon?: React.ReactNode;
-  value?: any;
+  name: string;
+  label?: string;
+  rows: number;
 }
+const Input: React.FC<InputProps> = ({onChange, name, label, rows}) => {
 
-const Textarea: React.FC<TextAreaProps> = ({onChange, placeholder, startIcon, value}) => {
  
   return (
-    <div  className={styles.form} tabIndex={-1}>
-      {startIcon}
-      <textarea placeholder={placeholder} rows={10} onChange={onChange} value={value}/>
+    <div style={{display: 'inline-block'}}>
+      <label htmlFor={name}>{label}</label>
+      <textarea rows={rows} onChange={onChange} name={name} className={styles.form} />
     </div>
   );
 }
 
-export default Textarea;
+export default Input;

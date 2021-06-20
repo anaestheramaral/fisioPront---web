@@ -67,10 +67,7 @@ h3 {
 input,
 textarea {
   font-weight: 300;
-  color: var(--white);
-  &:focus {
-    outline: none;
-  }
+  color: var(--black);
 }
 
 button,

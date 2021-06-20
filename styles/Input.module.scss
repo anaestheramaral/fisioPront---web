@@ -3,27 +3,18 @@
   align-items: center;
   justify-content: center;
 
-  background-color: var(--blue-light);
-  border-radius: 10px;
-  width: 100%;
-
+  background-color: var(--white);
+  border: 1px solid var(--blue-200);
+  border-radius: 8px;
   padding: 16px 20px;
-
+  
+  &::placeholder {
+    color: var(--gray-dark);
+  }
+  
   & svg {
     margin-right: 1rem;
   }
 
-  input, textarea{
-    border: none;
-    background: transparent;
-    flex: 1;
-    &::placeholder {
-      color: var(--gray)
-    }
-  }
-
-  &+form{
-    margin-top: 20px;
-  }
 
 }

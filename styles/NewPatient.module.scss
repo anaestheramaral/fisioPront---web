@@ -1,39 +1,10 @@
-.observations {
-  margin-top: 30px;
-}
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  padding: 80px 30px;
-  position: relative;
-
+.main {
   display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  
+  position: relative;
+  width: 100%;
+  flex: 1;
+  height: 100vh;
   flex-direction: column;
 
-  
-
-  button {
-    position: absolute;
-    bottom: 50px;
-    width: 85%;
-    letter-spacing: 1px;
-  }
-
-  h2 {
-    margin-bottom: 30px;
-  }
-
-  h3 {
-    margin-bottom: 10px;
-  }
-}
-
-.back {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  padding: 46px 40px;
 }

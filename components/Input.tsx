@@ -6,15 +6,16 @@ interface InputProps {
   onChange?: (e: ChangeEvent<HTMLInputElement>) => any;
   placeholder: string;
   startIcon?: React.ReactNode;
-  value: any;
+  name: string;
+  label?: string;
 }
-const Input: React.FC<InputProps> = ({onChange, placeholder, startIcon, value}) => {
+const Input: React.FC<InputProps> = ({onChange, placeholder, startIcon, name, label}) => {
 
  
   return (
-    <div className={styles.form} tabIndex={-1}>
-      {startIcon}
-      <input placeholder={placeholder} onChange={onChange} value={value}/>
+    <div style={{display: 'inline-block'}}>
+      <label htmlFor={name}>{label}</label>
+      <input placeholder={placeholder} onChange={onChange} name={name} className={styles.form} />
     </div>
   );
 }
