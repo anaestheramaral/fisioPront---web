@@ -1,8 +1,9 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 :root{
   --blue-dark: #267EBE;
   --blue-light: #408DC5;
@@ -30,8 +31,12 @@ html {
   }
 }
 
-body, input, textarea, button, select {
-  font-family: 'Ubuntu', sans-serif;
+body,
+input,
+textarea,
+button,
+select {
+  font-family: "Ubuntu", sans-serif;
   font-size: 1rem;
 }
 
@@ -40,8 +45,14 @@ a {
   text-decoration: none;
 }
 
+ul {
+  list-style-type: none;
+}
 
-h1, h2, h3 {
+
+h1,
+h2,
+h3 {
   font-weight: 500;
 }
 
@@ -50,15 +61,16 @@ h3 {
   width: 100%;
 }
 
-input, textarea {
+input,
+textarea {
   font-weight: 300;
   color: var(--white);
-  &:focus{
+  &:focus {
     outline: none;
   }
 }
 
-button, a {
+button,
+a {
   cursor: pointer;
 }
-// form:focus
