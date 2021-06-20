@@ -1,9 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head'
-import styles from '../../styles/Login/Styles.module.scss'
-import { FaGoogle } from 'react-icons/fa'
-
+import styles from './login.module.scss'
+import { FcGoogle } from 'react-icons/fc'
+// import Image from 'next/image'
 import { signIn } from 'next-auth/client'
-
+// import Logo from '../../public/images'
 async function handleLogin(){
     await signIn('google')
 }
@@ -15,20 +16,31 @@ export function Login() {
             <title>FisioPront | Login</title>
         </Head>
         <div className={ styles.container }>
-            <header>
-                <div>
-                    <h3>Vamos entrar!</h3>
-                    <p>É muito bom te ver de novo! </p>
-                </div>
-            </header>
-            <main className={ styles.containerLogin } >
-                <div>
-                    <input type="text" placeholder="Email ou telefone" />
-                    <input type="password" placeholder="Senha"/>
-                    <span>ou</span>
-                    <button onClick={ () => handleLogin() }><FaGoogle />Entrar com Google</button>
-                </div>
-            </main>
+            <div className={styles.sideHeader}>
+                {/* <Image src="/images/logoColored.png" alt="logo" /> */}
+                <img src="/images/logo-home.png" alt="logo"/>
+                <h1>fisioPront</h1>
+                <h2>
+                    Seu prontuário de bolso,
+                    <br /> 
+                    feito para te ajudar!
+                </h2>
+            </div>
+
+            <div className={ styles.register}>
+                <img src="/images/logo-long.png" alt="logo"/>
+                <h2>Já imaginou poder 
+                    <br />
+                    consultar seus pacientes 
+                    <br />
+                    na palma da sua mão?
+                </h2>
+                <span>Registre-se agora e descubra!</span>
+                <button onClick={handleLogin}>
+                    <FcGoogle />
+                    Entrar com o Google
+                </button>
+            </div>
         </div>
         </>
     )
