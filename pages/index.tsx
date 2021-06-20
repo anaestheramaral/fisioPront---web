@@ -1,5 +1,5 @@
 import { Login } from "../components/Login";
-import { Sidebar, HeaderMenu, Userinfo } from "../components";
+import { HeaderMenu, Userinfo } from "../components";
 import { useSession, signOut } from "next-auth/client";
 import styles from "../styles/Index.module.scss";
 
@@ -12,9 +12,8 @@ export default function Home() {
     <Login />
   ) : (
     <div className={styles.main}>
-      <Sidebar />
       <div className={styles.content}>
-        <HeaderMenu />
+        <HeaderMenu title="Dashboard"/>
         <div>
           <div><p>conteudo</p></div>
           <Userinfo />

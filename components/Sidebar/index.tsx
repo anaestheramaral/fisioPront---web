@@ -1,9 +1,14 @@
+/* eslint-disable @next/next/no-img-element */
+import { useSession } from "next-auth/client";
 import React from "react";
 
 import styles from "./Sidebar.module.scss";
 
 const Sidebar: React.FC = () => {
-  return (
+  const [session] = useSession()
+
+  if (session){
+  return  (
     <div className={styles.container}>
       <div className={styles.logo}>
         <img src="/images/logo-dashboard.png" alt="logo" />
@@ -17,7 +22,8 @@ const Sidebar: React.FC = () => {
         </ul>
       </div>
     </div>
-  );
+  );}
+  return <div></div>
 };
 
 export default Sidebar;

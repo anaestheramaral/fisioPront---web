@@ -1,9 +1,7 @@
 .main {
   display: flex;
-}
-
-.content {
-  background-color: #F3F7FF;
-  height: 100vh;
+  position: relative;
   width: 100%;
+  flex: 1;
+  height: 100vh;
 }

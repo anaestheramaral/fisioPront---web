@@ -1,5 +1,5 @@
 import React, { ButtonHTMLAttributes} from 'react';
-import styles from '../styles/Button.module.scss'
+import styles from './Button.module.scss'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement>{
   spaced?: boolean;
