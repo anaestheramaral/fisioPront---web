@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 /* eslint-disable @next/next/no-img-element */
 import React, { useContext, useEffect, useState } from "react";
 import { Login } from "../components/Login";
@@ -53,16 +54,14 @@ export default function Home() {
                           <div className={styles.avatar_user}>
                             <img src="/images/pacients.png" alt="" />
                             <div className={styles.avatar_title}>
-                              <div>
-                                <p>{pacient.name}</p>
-                              </div>
+                                {pacient.name}
                               <div className={styles.user_contact}>
-                                <p>{pacient.contact}</p>
+                                {pacient.contact}
                               </div>
                             </div>
                           </div>
                           <div className={styles.user_date}>
-                            <p>{pacient.date}</p>
+                            {pacient.date}
                           </div>
                           <div
                             className={`${styles.user_status} ${
