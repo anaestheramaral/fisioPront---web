@@ -4,6 +4,8 @@ import styles from "../styles/NewPatient.module.scss";
 import Button from "../components/Button";
 import Link from "next/link";
 
+import Moment from 'moment';
+
 import Input from "../components/Input";
 import Textarea from "../components/TextArea";
 import { HeaderMenu, Userinfo } from "../components";
@@ -38,9 +40,13 @@ export default function Home() {
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+
+    const newDate = Moment().format('DD-MM-YYYY');
     setNewPatient({
       ...newPatient,
-      date: '11/11/11',
+      date: `${newDate}`,
+      styles: 'default',
+      status: 'Regular',
       [e.target.name]: e.target.value,
     });
   };
@@ -75,7 +81,7 @@ export default function Home() {
               <Input
                 onChange={handleChange}
                 placeholder="Motivo da internação"
-                name="name"
+                name="internationMotive"
                 label="Motivo da internação:"
               />
             </div>
