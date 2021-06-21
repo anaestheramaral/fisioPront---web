@@ -13,7 +13,6 @@ export default function Home() {
         <title>fisioPront | Patients</title>
       </Head>
 
-      <Header />
 
       <main className={styles.main}>
         
