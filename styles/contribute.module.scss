@@ -1,0 +1,65 @@
+.main {
+  display: flex;
+  width: 100%;
+  flex: 1;
+  height: 100vh;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.box {
+  margin-top: 30px;
+  padding: 20px;
+  display: flex;
+  border: 1px solid #ebeff2;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: #ffffff;
+}
+
+.titlePage {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 25px;
+}
+
+.card {
+  width: 100%;
+  background-color: #f3f7ff;
+  padding: 20px;
+  margin: 15px;
+  border-radius: 10px;
+  border: 1px solid #ebeff2;
+}
+
+.title {
+  font-weight: bold;
+  color: #192a3e;
+  font-size: 18px;
+}
+
+.category {
+  color: #192a3e;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.info {
+  padding: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #8089ab;
+
+  a {
+    font-weight: bold;
+    color: #2290e0;
+  }
+}
