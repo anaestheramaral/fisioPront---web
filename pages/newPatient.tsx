@@ -13,6 +13,7 @@ import { HeaderMenu, Userinfo } from "../components";
 import { useSession } from "next-auth/client";
 import { Login } from "../components/Login";
 import { FormEventHandler } from "react";
+import { FormEvent } from "react";
 
 interface PatientProps {
   name: string;
@@ -53,7 +54,7 @@ export default function Home() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent) => {
     handleAddNewPatient(newPatient);
     setNewPatient({ 
       name: '',
@@ -95,7 +96,7 @@ export default function Home() {
                 onChange={handleChange}
                 name="observations"
                 rows={6}
-                label="Motivo da internação"
+                label="Observação"
               />
             </div>
   

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { useSession, signOut } from "next-auth/client";
 import { HeaderMenu, Userinfo } from "../components";
@@ -72,7 +73,7 @@ const pages: React.FC = () => {
               <ul className={styles.cards}>
                 {users.map((user) => {
                   return (
-                    <li className={styles.card}>
+                    <li className={styles.card} key={user.name}>
                       <div className={styles.title}>
                         <p>{user.name}</p>
                       </div>
@@ -81,19 +82,19 @@ const pages: React.FC = () => {
                       </div>
                       <div className={styles.info}>
                         <p>GitHub</p>
-                        <a target="_blank" href={user.github}>
+                        <a target="_blank" href={user.github} rel="noreferrer">
                           Acessar
                         </a>
                       </div>
                       <div className={styles.info}>
                         <p>Linkedin </p>
-                        <a target="_blank" href={user.linkedin}>
+                        <a target="_blank" href={user.linkedin} rel="noreferrer">
                           Acessar
                         </a>
                       </div>
                       <div className={styles.info}>
                         <p>E-mail </p>
-                        <a target="_blank" href={`mailto:${user.email}`}>
+                        <a target="_blank" href={`mailto:${user.email}`} rel="noreferrer">
                           Enviar Email
                         </a>
                       </div>
