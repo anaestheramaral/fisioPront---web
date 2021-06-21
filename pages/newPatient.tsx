@@ -9,32 +9,53 @@ import Textarea from "../components/TextArea";
 import { HeaderMenu, Userinfo } from "../components";
 import { useSession } from "next-auth/client";
 import { Login } from "../components/Login";
+import { FormEventHandler } from "react";
 
 interface PatientProps {
   name: string;
   internationMotive: string;
   observations: string;
+  contact:  string;
+  date: string;
+  status: string;
+  styles: string;
 }
 
 export default function Home() {
   const { handleAddNewPatient } = useContext(PatientsContext);
   const [session] = useSession();
 
-  const [newPatient, setNewPatient] = useState<PatientProps>(
-    {} as PatientProps
-  );
+  const [newPatient, setNewPatient] = useState<PatientProps>({ 
+    name: '',
+    internationMotive: '',
+    observations: '',
+    contact:  '',
+    date: '',
+    status: '',
+    styles: ''
+  });
 
   const handleChange = (
     e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     setNewPatient({
       ...newPatient,
+      date: '11/11/11',
       [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = () => {
     handleAddNewPatient(newPatient);
+    setNewPatient({ 
+      name: '',
+      internationMotive: '',
+      observations: '',
+      contact:  '',
+      date: '',
+      status: '',
+      styles: ''
+    })
   };
 
   if (session) {

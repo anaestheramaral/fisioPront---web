@@ -1,57 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
-import React from "react";
+import React, { useContext } from "react";
 import { Login } from "../components/Login";
 import { HeaderMenu, Userinfo } from "../components";
 import { useSession, signOut } from "next-auth/client";
 import styles from "../styles/Index.module.scss";
+import { PatientsContext } from "../contexts/patients.context";
 
-const pacients = [
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Bom",
-    styles: "default",
-  },
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Regular",
-    styles: "regular",
-  },
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Crítico",
-    styles: "warning",
-  },
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Ótimo",
-    styles: "success",
-  },
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Regular",
-    styles: "regular",
-  },
-  {
-    name: "Emerson Garrido",
-    contact: "67 99350-8091",
-    date: "10/05/2020",
-    status: "Crítico",
-    styles: "warning",
-  },
-];
 
 export default function Home() {
   const [session] = useSession();
+  const { patients } = useContext(PatientsContext)
 
   return !session ? (
     <Login />
@@ -80,7 +38,7 @@ export default function Home() {
 
             <div className={styles.list_users}>
               <ul>
-                {pacients.map((pacient) => {
+                {patients.map((pacient) => {
                   return (
                     <li key={pacient.name}>
                       <div className={styles.avatar_user}>
