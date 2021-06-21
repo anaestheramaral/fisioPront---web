@@ -77,12 +77,16 @@
     padding-bottom: 15px;
     border-bottom: 1px solid #eef1fb;
     margin-bottom: 10px;
+
+    & > div:first-child {
+      width: 20%
+    }
   }
 }
 
 .avatar_user {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 
   img {
