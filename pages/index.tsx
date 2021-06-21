@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Login } from "../components/Login";
 import { HeaderMenu, Userinfo } from "../components";
 import { useSession, signOut } from "next-auth/client";
@@ -9,6 +9,12 @@ import { PatientsContext } from "../contexts/patients.context";
 export default function Home() {
   const [session] = useSession();
   const { patients } = useContext(PatientsContext);
+  const [newsPatients, setNewsPatients] = useState([]);
+
+  useEffect(() => {
+    const newPatients: any = patients.slice(0,5);
+    setNewsPatients(newPatients);
+  }, []);
 
   return !session ? (
     <Login />
@@ -23,7 +29,9 @@ export default function Home() {
                 <p>Pacientes Recentes</p>
               </div>
               <div className={styles.action}>
-                <p>Ver Todos</p>
+                <p>
+                  <a href="/patients">Ver Todos</a>
+                </p>
               </div>
             </div>
 
@@ -37,9 +45,9 @@ export default function Home() {
 
             <div className={styles.list_users}>
               <ul>
-                {patients.length > 0 ? (
+                {newsPatients.length > 0 ? (
                   <div>
-                    {patients.map((pacient) => {
+                    {newsPatients.map((pacient: any) => {
                       return (
                         <li key={pacient.name}>
                           <div className={styles.avatar_user}>

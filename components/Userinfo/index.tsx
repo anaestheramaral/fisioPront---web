@@ -1,9 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
-
+import React, { useContext } from 'react';
+import { PatientsContext } from "../../contexts/patients.context";
 import styles from './Userinfo.module.scss';
 
 const Userinfo: React.FC = () => {
+  const { patients } = useContext(PatientsContext);
   return (
     <div className={styles.container}>
      <div className={styles.avatar_user}><img src="/images/user.png" alt="avatar" /></div>
@@ -14,7 +15,7 @@ const Userinfo: React.FC = () => {
          <div className={styles.icon}><img src="/images/pacients.png" alt="avatar" /></div>
          <div className={styles.infos}>
            <div className={styles.info}><p>Total de pacientes</p></div>
-           <div className={styles.number}><p>204</p></div>
+           <div className={styles.number}><p>{patients.length}</p></div>
          </div>
        </div>
        <div className={styles.card}>

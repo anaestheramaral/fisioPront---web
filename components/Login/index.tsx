@@ -6,7 +6,9 @@ import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/client";
 // import Logo from '../../public/images'
 async function handleLogin() {
-  await signIn("google");
+  const response = await signIn("google");
+
+  console.log(response);
 }
 
 export function Login() {
