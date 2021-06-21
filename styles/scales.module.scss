@@ -1,0 +1,156 @@
+.main {
+  display: flex;
+  position: relative;
+  width: 100%;
+  flex: 1;
+  height: 100vh;
+  flex-direction: column;
+  padding: 30px 20px;
+}
+
+.box {
+  padding-top: 30px;
+  height: 90vh;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_list {
+  width: 100%;
+  margin-right: 15px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #ebeff2;
+  border-radius: 10px;
+}
+
+.header_actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.action {
+  color: #2290e0;
+  font-size: 14px;
+}
+
+.notPatients {
+  text-align: center;
+  color: #8089ab;
+  font-size: 14px;
+}
+
+.header_list {
+  background-color: #f3f7ff;
+  border-radius: 6px;
+  margin-top: 15px;
+  padding: 20px;
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  li {
+    color: #8089ab;
+    font-size: 14px;
+  }
+}
+
+.list_users {
+  ul {
+    margin-top: 10px;
+
+    padding: 15px;
+  }
+
+  li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eef1fb;
+    margin-bottom: 10px;
+    
+    & > div {
+      width: 30%
+    }
+    & > div:first-child {
+
+      width: 35%
+    }
+    & > div:last-child {
+
+      width: 10%
+    }
+
+  }
+}
+
+.avatar_user {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  img {
+    width: 55px;
+    height: 55px;
+  }
+}
+
+.avatar_title {
+  margin-left: 10px;
+}
+
+.user_contact {
+  font-size: 12px;
+  color: #8089ab;
+  margin-top: 5px;
+}
+
+.user_date {
+  font-size: 12px;
+  color: #8089ab;
+}
+
+.user_status {
+  color: #487baa !important;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 90px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.default {
+  background-color: #d6ebff;
+}
+
+.success {
+  color: #487baa !important;
+  background-color: #dbf6e3;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.warning {
+  color: #487baa !important;
+  background-color: #f6dbe3;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.regular {
+  color: #487baa !important;
+  background-color: #d6ebff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
