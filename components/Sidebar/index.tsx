@@ -22,17 +22,17 @@ const Sidebar: React.FC = () => {
             </li>
           </Link>
           <Link href="/patients" passHref>
-            <li className={styles.active}>
+            <li>
                Pacientes
             </li>
           </Link>
           <Link href="/scales" passHref>
-            <li className={styles.active}>
+            <li>
                Escalas e Indices
             </li>
           </Link>
-          <Link href="/" passHref>
-            <li className={styles.active}>
+          <Link href="/contribute" passHref>
+            <li>
              Contribua Conosco
             </li>
           </Link>
