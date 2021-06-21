@@ -1,4 +1,5 @@
 import React, { ChangeEvent, useContext, useState } from "react";
+import { useRouter } from 'next/router'
 import { PatientsContext } from "../contexts/patients.context";
 import styles from "../styles/NewPatient.module.scss";
 import Button from "../components/Button";
@@ -24,6 +25,7 @@ interface PatientProps {
 }
 
 export default function Home() {
+  const router = useRouter()
   const { handleAddNewPatient } = useContext(PatientsContext);
   const [session] = useSession();
 
@@ -51,7 +53,7 @@ export default function Home() {
     });
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
     handleAddNewPatient(newPatient);
     setNewPatient({ 
       name: '',
@@ -62,6 +64,9 @@ export default function Home() {
       status: '',
       styles: ''
     })
+
+    e.preventDefault()
+    router.push('/patients');
   };
 
   if (session) {
